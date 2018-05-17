@@ -8,3 +8,7 @@ and for Client Side I found you a nice starter kit
 http://blog.teamtreehouse.com/an-introduction-to-websockets
 
 Use the above 2 links to make your own websocket applet.
+Of course you have to activate and install appropriate windows server files.
+I forgot how I got there myself but the following link should get you there.
+https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support
+
