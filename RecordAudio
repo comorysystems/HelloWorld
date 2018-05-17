@@ -1,0 +1,100 @@
+
+Here is a dump of js code from one of my apps for recording Audio with filters and stuff. You will want to change the code
+for your applet but it will get it done. 
+A starter resource: https://developers.google.com/web/fundamentals/media/recording-audio/
+Another resource: https://www.html5rocks.com/en/tutorials/getusermedia/intro/
+
+
+/// Begin Audio
+var microphoneToggle=false;
+// was in handle success
+// var context = new AudioContext();
+
+var context = new AudioContext();
+var source;        // set to audio source later
+var gainNode = context.createGain();        // planned use is on / off since spec does not really do start/stop
+var delay = context.createDelay();
+var filter = context.createBiquadFilter();
+var neverstarted=true;
+
+    var handleSuccess = function(stream) {
+        neverstarted=false;
+
+        // once stram from mic is established we enter this call see .navigator.mediadevices(...).then
+        source = context.createMediaStreamSource(stream);           // source = input
+
+        // source.connect(context.destination);        // connect to input
+        // source.connect(gainNode);
+        
+        // sets source to gainNode
+        gainNode.connect(context.destination);      // start with source
+        gainNode.gain.setValueAtTime(.03, context.currentTime);        // 0.05 works kina for my setup
+
+        // filter.connect(gainNode)
+        // filter.frequency.setValueAtTime(300,context.currentTime);       // help lower feedback but equip issue
+
+        //delay.connect(context.destination)  /// delay.connect(filter)
+        //delay.delayTime.setValueAtTime(.95,context.currentTime);
+
+        //source.connect(delay);                  // connect to filter connect to delay if you want
+        //return;
+        source.connect(gainNode);
+
+        var processor = context.createScriptProcessor(1024, 1, 1);
+        processor.connect(context.destination);         // also connect scriptProcessor
+
+
+        processor.onaudioprocess = function(e){
+            // use processor to grab block of data  and check mic state
+            if (microphoneToggle==false){
+                // turn mic off
+                gainNode.gain.setValueAtTime(0, context.currentTime);
+            } else {
+                // turn back on
+                gainNode.gain.setValueAtTime(.03, context.currentTime);
+            }
+        };
+
+
+        // we can let user know mic on
+        $.toast({
+               heading: 'AUDIO STARTED',
+               text: 'RECORDING ON',
+               position: 'mid-center',
+               bgColor:'#d4edda',
+               icon: 'info',
+               hideAfter: 1000
+        });
+
+
+    };
+
+
+    $("#btn-microphone_go").click(function() {
+        if (microphoneToggle==false) {
+
+            microphoneToggle=true      
+            console.log("audio started");
+            if (neverstarted){
+            navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+            .then(handleSuccess);
+            }
+        
+             
+        } else {
+                                // play last bit recorded for fun
+            microphoneToggle=false;
+            console.log("audio stopped");
+            microphoneToggle=false;     // allow user to click again
+            $.toast({
+                heading: 'AUDIO STOP',
+                text: 'RECORDING OFF',
+                position: 'mid-center',
+                bgColor:'#d4edda',
+                icon: 'info',
+                hideAfter: 1000
+            });
+            
+        }
+
+    });
