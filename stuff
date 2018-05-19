@@ -1,0 +1,34 @@
+
+<h3> ComOry Systems </h3><h4> Resources for you to provide a competitive advantage today.</h4>
+Mobile Web, WebSockets, IoT, UI, LTE networks, Cloud Computing, PCI-DSS, and more. <br>
+
+
+
+ <br>
+ <h4> Short List </h4>
+
+
+<a href="https://github.com/comorysystems"> GitHub Started 2018/05/16</A>
+<Br><Br>
+<a href="https://comorysystems.com/template/horizontal/index.html"> Latest Template in Use</a> Template Author: wrappixel.com<br><br>
+
+Added/Implemented: Email, Calendar, Notepad, Chat (websockets), SQL/Access database, Google Auth<br><br>
+Removed But Rebuildable: Invoicing, Portals, POS (retail, restaurant, Internet), Desktop Text Messenger, Facial Recognition<br><BR>
+Looking to get started with Bootstrap? Get a template <a href="https://wrapbootstrap.com/"> Wrap Bootstrap</a> <br><br>
+3D Cube Logo: <a href="https://comorysystems.com/3dlogo.asp"> Click here / View Source</a> <br><br>
+Voice/Text API <a href="https://www.twilio.com/">Twilio</a> there are cheaper ones but this one is well documented and super easy. <br><br>
+Want WebSockets? <a href="https://github.com/comorysystems/HelloWorld/blob/master/websockets"> Websockets for Windows</a> <br><br>
+Recording Audio with Chrome in webApp resources: <a href="https://github.com/comorysystems/HelloWorld/blob/master/RecordAudio"> Start here</a><br><br>
+Want to make IoT with Verizon? <a href="https://opendevelopment.verizonwireless.com/design-and-build/hardware-development-kits/kit/5829"> Verizon Dev</a><br><Br>
+Credit Card processing that keeps you out of scope and lowers your PCI-DSS requirements? Go see <a href="https://developer.cardconnect.com/hosted-iframe-tokenizer"> CardConnect</a> or search google for credit card tokenizer (Just dont go with BluePay for any processing ever)<Br><br>
+For out of scope integration to Miura go see <a href="https://www.creditcall.com/"> Credit Call</A> If you have PCI-DSS covered I highly reccomend their gateway if you like money<br><br>
+Get your webapp an icon on Android <a href="https://developers.google.com/web/fundamentals/web-app-manifest/"> add the manifest</a> <br><BR>
+Is your AdWords ROI suffering from bot attacks? Having trouble targeting with Adwords? Ill be putting up solutions soon. Send me an email if you like this topic.<br><BR>
+VB.NET SQL and Access database code you can drop into your project. JSON in and JSON out. Coming soon.<br><br>
+ClassicASP and migrating to VB.NET from VB6 for com object requests article coming soon. Including full project config and source.<br><br>
+A super fun microcontroller <a href="https://www.arduino.cc/"> Arduino </a><br><br>
+Contact:  Greg @ 623-209-9128.<br>
+Email: gregoryway@comorysystems.com<br>
+ <h3>Test Results</h3>
+ Mobile Desktop <a href="https://github.com/comorysystems/HelloWorld/blob/master/MobileDesktop"> Mobile Desktop Tests</a>. Summary: Starting with S8, the S9 and soon to be S10 is solution.<br><br>
+
